@@ -15,8 +15,13 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
-    }
+        
+            $message = $request->query->get('message');
+    
+            $projects = Project::all();
+    
+            return view('admin.projects.index', compact('projects', 'message'));
+        }
 
     /**
      * Show the form for creating a new resource.
